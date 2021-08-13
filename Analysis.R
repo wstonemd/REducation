@@ -142,3 +142,14 @@ survey.Kameda<-
         levels=c(0,1),
         labels=c("Kameda","Other")))
 
+library(tableone)
+knitr::kable(
+  print(
+    tableone::CreateTableOne(
+      data=survey.Kameda,
+      strata = "Institute",
+      test = F,
+      includeNA = T,
+      addOverall = T)))
+
+
